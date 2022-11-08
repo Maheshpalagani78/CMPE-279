@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
         exit(EXIT_FAILURE);
     }
 
-    // Attaching socket to port 80
+    // Attaching socket to port 8080
     // // https://stackoverflow.com/questions/58599070/socket-programming-setsockopt-protocol-not-available#comment103510725_58599070
     
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR , &opt, sizeof(opt)) | setsockopt(server_fd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt)) )
@@ -38,7 +38,7 @@ int main(int argc, char const *argv[])
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons( PORT );
 
-    // Forcefully attaching socket to the port 80
+    // Forcefully attaching socket to the port 8080
     if (bind(server_fd, (struct sockaddr *)&address,
                                  sizeof(address))<0)
     {
